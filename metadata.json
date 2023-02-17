@@ -1,0 +1,13 @@
+{
+  "name": "Yennefer",
+  "description": "The future is uncertain",
+  "external_url": "https://twitter.com/LaDunnie99",
+  "image": "https://ipfs.filebase.io/ipfs/QmZ9Sj4SCqoZBkD7C9wHwmbhTvJDTJzmUVsfhfifXWYx2v",
+  "attributes": [
+    { "trait_type": "Yennefer", "value": "Reliance" },
+    { "trait_type": "image type", "value": "paint" },
+    { "trait_type": "Crypto", "value": "Ether" }
+  ]
+}
+
+

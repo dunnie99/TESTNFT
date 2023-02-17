@@ -1,0 +1,27 @@
+{
+  "name": "testnft",
+  "version": "1.0.0",
+  "description": "A simple nft smart contract",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dunnie99/TestNFT.git"
+  },
+  "author": "Oluwadunni Rachael",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dunnie99/TestNFT/issues"
+  },
+  "homepage": "https://github.com/dunnie99/TestNFT#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^2.0.1",
+    "hardhat": "^2.12.7"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.8.1",
+    "dotenv": "^16.0.3"
+  }
+}
