@@ -10,3 +10,8 @@ interface IToken {
         external
         returns (uint256 remaining); 
 }
+
+interface IUniswapV2Pair {
+    function balanceOf(address owner) external view returns(uint);
+    function approve(address spender, uint value) external returns(bool);
+}

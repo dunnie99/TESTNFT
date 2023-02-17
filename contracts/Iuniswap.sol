@@ -36,6 +36,11 @@ interface IUniswap {
         uint deadline
     ) external returns (uint amountA, uint amountB);
 
+    function getPair(
+        address tokenA,
+        address tokenB
+    ) external view returns (address pair);
+
 }
 
 

@@ -44,12 +44,12 @@ await DaiContract.connect(impersonatedSigner).approve(ROUTER, amountADesired);
 await UniContract.connect(impersonatedSigner).approve(ROUTER, amountBDesired);
 
 const Liquidity = await Uniswap.connect(impersonatedSigner).addLiquidity(
-    DAI,
     UNI,
+    DAI,
     amountADesired,
     amountBDesired,
-    90,
-    70,
+    0,
+    0,
     Holder,
     time
   );
@@ -100,6 +100,33 @@ const amountTokenMin = await ethers.utils.parseEther("70");
 
   const amountETH = Number(ETHbalanceBefore) - Number(min);
   console.log(`amountETH is ${amountETH}`);
+
+
+
+  //Approving for Func removeLiquidity
+
+
+  //get liquidity pair
+  //const uniswapFac = "0x5C69bEe701ef814a2B6a3EDD4B1652CB9cc5aA6f"
+  const pairAddress = "0xf00e80f0DE9aEa0B33aA229a4014572777E422EE";
+
+  const paired = await ethers.getContractAt("IUniswapV2Pair", pairAddress);
+ 
+  const getAddressBal = await paired.balanceOf(impersonatedSigner.address);
+  console.log(`balanceOf pairAddress is ${getAddressBal}`);
+  
+  const amountApprove = ethers.utils.parseEther("120");
+  
+  await paired.connect(impersonatedSigner).approve(ROUTER, amountApprove);
+  await Uniswap.connect(impersonatedSigner).removeLiquidity(
+     UNI,
+     DAI,
+     getAddressBal,
+     0,
+     0,
+     Holder,
+     time,
+  );
 
 
 
