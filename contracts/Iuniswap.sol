@@ -4,7 +4,7 @@ pragma solidity ^0.8.9;
 // Uncomment this line to use console.log
 // import "hardhat/console.sol";
 
-contract Lock {
+interface IUniswap {
 
 
     function addLiquidity(
@@ -16,7 +16,8 @@ contract Lock {
         uint amountBMin,
         address to,
         uint deadline
-    ) external returns (uint amountA, uint amountB, uint liquidity){};
+    ) external returns (uint amountA, uint amountB, uint liquidity);
+
     function addLiquidityETH(
         address token,
         uint amountTokenDesired,
@@ -24,7 +25,7 @@ contract Lock {
         uint amountETHMin,
         address to,
         uint deadline
-    ) external payable returns (uint amountToken, uint amountETH, uint liquidity){};
+    ) external payable returns (uint amountToken, uint amountETH, uint liquidity);
     function removeLiquidity(
         address tokenA,
         address tokenB,
@@ -33,7 +34,7 @@ contract Lock {
         uint amountBMin,
         address to,
         uint deadline
-    ) external returns (uint amountA, uint amountB){};
+    ) external returns (uint amountA, uint amountB);
 
 }
 
